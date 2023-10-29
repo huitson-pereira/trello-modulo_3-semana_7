@@ -2,34 +2,31 @@
 
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
-  async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('usuarios', {
+  async up (queryInterface, Sequelize) {
+    await queryInterface.createTable('geracoes', {
       id: {
         type: Sequelize.INTEGER,
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
       },
-      nickname: {
-        type: Sequelize.STRING,
+      id_unidade: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: {
+            tableName: 'unidades',
+          },
+          key: 'id',
+        },
         allowNull: false,
       },
-      address: {
-        type: Sequelize.STRING,
+      reference_date: {
+        type: Sequelize.DATE,
         allowNull: false,
       },
-      brand: {
+      total_generated: {
         type: Sequelize.STRING,
         allowNull: false,
-      },
-      model: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
-      active: {
-        type: Sequelize.BOOLEAN,
-        allowNull: false,
-        defaultValue: true,
       },
       created_at: {
         type: Sequelize.DATE,
@@ -46,7 +43,7 @@ module.exports = {
     });
   },
 
-  async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('unidades');
-  },
+  async down (queryInterface, Sequelize) {
+    await queryInterface.dropTable('geracoes');
+  }
 };
