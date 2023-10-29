@@ -2,7 +2,7 @@
   "name": "modulo-3-semana-7",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -21,15 +21,7 @@
     "sequelize": "^6.33.0"
   },
   "devDependencies": {
-    "@types/react": "^18.2.15",
-    "@types/react-dom": "^18.2.7",
-    "@vitejs/plugin-react": "^4.0.3",
-    "eslint": "^8.45.0",
-    "eslint-plugin-react": "^7.32.2",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-react-refresh": "^0.4.3",
     "nodemon": "^3.0.1",
-    "sequelize-cli": "^6.6.1",
-    "vite": "^4.4.5"
+    "sequelize-cli": "^6.6.1"
   }
 }
